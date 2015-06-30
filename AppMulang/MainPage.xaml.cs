@@ -18,17 +18,19 @@ namespace AppMulang
         public MainPage()
         {
             InitializeComponent();
-            
-            
+           
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }
 
-        public void AddMulang()
+        public async void AddMulang()
         {
             Person p = new Person();
             p.Age = 16;
             p.Name = "Sub. Mulang";
+            p.Description = "This is a very grummy lecturer";
+
+            await  App.mobileservice.GetTable<Person>().InsertAsync(p);
         }
 
 
