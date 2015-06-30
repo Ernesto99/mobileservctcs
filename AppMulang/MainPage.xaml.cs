@@ -23,6 +23,8 @@ namespace AppMulang
             //BuildLocalizedApplicationBar();
         }
 
+
+        //
         public async void AddMulang()
         {
             Person p = new Person();
