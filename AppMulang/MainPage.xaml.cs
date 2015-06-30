@@ -23,16 +23,25 @@ namespace AppMulang
             //BuildLocalizedApplicationBar();
         }
 
+        public void login()
+        {
+           // App.mobileservice.LoginAsync(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.Google);
+          
+        }
 
         //
         public async void AddMulang()
         {
-            Person p = new Person();
-            p.Age = 16;
-            p.Name = "Sub. Mulang";
-            p.Description = "This is a very grummy lecturer";
+            Person p = new Person() { Age = 16, Name = "Sub. Mulang", Description = "This is a very grummy lecturer" };
 
-            await  App.mobileservice.GetTable<Person>().InsertAsync(p);
+            await App.mobileservice.GetTable<Person>().InsertAsync(p);
+
+        }
+
+        private void btnmulang_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("We are almost adding mulang in the database","Subordinate Lecturer", MessageBoxButton.OK);
+            AddMulang();
         }
 
 
